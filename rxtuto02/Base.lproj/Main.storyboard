@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rxtuto02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sSR-6d-aV5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ama-OB-xeg">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cityPropertyCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityPropertyCell" id="bbH-Bc-gYt" customClass="CityCell" customModule="rxtuto02" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bbH-Bc-gYt" id="Ptl-XZ-sbS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quT-of-Xzv">
+                                                    <rect key="frame" x="20" y="11.5" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="quT-of-Xzv" secondAttribute="trailing" constant="20" id="WvK-do-354"/>
+                                                <constraint firstItem="quT-of-Xzv" firstAttribute="leading" secondItem="Ptl-XZ-sbS" secondAttribute="leading" constant="20" id="ZPV-xm-Ubs"/>
+                                                <constraint firstItem="quT-of-Xzv" firstAttribute="centerY" secondItem="Ptl-XZ-sbS" secondAttribute="centerY" id="m0I-ts-cRr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="quT-of-Xzv" id="du0-Ry-V0e"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="QhV-tt-UQu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sSR-6d-aV5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1UO-mM-eIU"/>
+                            <constraint firstItem="sSR-6d-aV5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4N6-9g-PU2"/>
+                            <constraint firstItem="ama-OB-xeg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BPF-90-Ni0"/>
+                            <constraint firstItem="ama-OB-xeg" firstAttribute="top" secondItem="sSR-6d-aV5" secondAttribute="bottom" id="KCn-3n-0bF"/>
+                            <constraint firstItem="ama-OB-xeg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LET-H0-V5d"/>
+                            <constraint firstItem="sSR-6d-aV5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jcm-br-s7Z"/>
+                            <constraint firstItem="ama-OB-xeg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tww-9A-2cO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="sSR-6d-aV5" id="FWL-9x-7Sb"/>
+                        <outlet property="tableView" destination="ama-OB-xeg" id="vOB-5R-TMy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
